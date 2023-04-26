@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/CaiDat.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/swing/EventClick.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/TableCus/ModernScrollBarUI.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DTO/UserDTO.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/ManHinhDN.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DAL/UserDAL.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DTO/DictDTO.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DTO/WordsHocPhanDTO.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/ThuVien.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DTO/DataSearchDTO.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DTO/ModuleDTO.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DAL/Connection1.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/DKTaiKhoan.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/ManHinhChinh.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/TableCus/ScrollBarCustom.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/swing/textField.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/BLL/test_1.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/swing/PanelSearch.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/BLL/DatasearchBLL.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/ChinhSuaHP.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/swing/Search_Item.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/BLL/UserBLL.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/TaoHP2.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/BLL/AutocompleteTrieList.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/ThuVien1.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DAL/ModuleDAL.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/DoiTen.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/TaoHP.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/TableCus/MyTable.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/DoiMK.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DAL/DictDAL.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/BLL/Test.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/BLL/DictBLL.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/DAL/WordsHocPhanDAL.java</file>
+            <file>file:/E:/NetBeansFile/PBL3Riu/src/GUI/HocPhan.java</file>
+        </group>
+    </open-files>
+</project-private>
