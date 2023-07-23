@@ -22,7 +22,7 @@ public class UserDAL {
         List<UserDTO> list = new ArrayList<>();
         try {
 
-            String querry = "select * from NguoiDung";
+            String querry = "select * from Nguoidung";
             Connection1.result = Connection1.statement.executeQuery(querry);
             Connection1.rmsd = Connection1.result.getMetaData();
             int socot = Connection1.rmsd.getColumnCount();
@@ -66,7 +66,7 @@ public class UserDAL {
     public List<String> getListGmail(){
         List<String> list = new ArrayList<>();
         try {
-            String querry = "select Gmail from NguoiDung ";
+            String querry = "select Gmail from Nguoidung ";
             Connection1.result = Connection1.statement.executeQuery(querry);
             while (Connection1.result.next()) {
                 list.add(Connection1.result.getString("Gmail"));
@@ -79,7 +79,7 @@ public class UserDAL {
     public List<String> getListPhone(){
         List<String> list = new ArrayList<>();
         try {
-            String querry = "select Sdt from NguoiDung ";
+            String querry = "select Sdt from Nguoidung ";
             Connection1.result = Connection1.statement.executeQuery(querry);
             while (Connection1.result.next()) {
                 list.add(Connection1.result.getString("Sdt"));
@@ -92,7 +92,7 @@ public class UserDAL {
     public List<String> getListUserName() {
         List<String> list = new ArrayList<>();
         try {
-            String querry = "select TaiKhoan from NguoiDung ";
+            String querry = "select TaiKhoan from Nguoidung ";
             Connection1.result = Connection1.statement.executeQuery(querry);
             while (Connection1.result.next()) {
                 list.add(Connection1.result.getString("TaiKhoan"));
@@ -103,14 +103,24 @@ public class UserDAL {
         return list;
     }
 
-    public List<String> getListUserId() {
-        return null;
+    public static  int getUserIdByUsername(String username) {
+        try {
+            String querry = "select idU from Nguoidung where TaiKhoan = '" + username + "'";
+            Connection1.result = Connection1.statement.executeQuery(querry);
+            while(Connection1.result.next()){
+                return  Connection1.result.getInt(1);
+            }
+            return  Connection1.result.getInt(1);
+        } catch (Exception e) {
+             return 5;
+        }
+       
     }
 
     public  static  UserDTO getUserLogin(String username, String password) {
         UserDTO user = new UserDTO();
         try {
-            String querry = "select * from NguoiDung " + "where TaiKhoan= '" + username + "'" + " and matkhau= '" + password + "'";
+            String querry = "select * from Nguoidung " + "where TaiKhoan= '" + username + "'" + " and matkhau= '" + password + "'";
             Connection1.result = Connection1.statement.executeQuery(querry);
 //            if (Connection1.result == null)
 //                return null;
@@ -152,12 +162,32 @@ public class UserDAL {
     }
     public static void createUser(String username, String password, String name, String gmail, String phone){
         try {
-            String querry = "insert into NguoiDung "
+            String querry = "insert into Nguoidung "
                     + "values "
-                    + "('" + username + "','" + password + "','" + name + "','" + gmail + "','" + phone + "');";
+                    + "('" + username + "','" + password + "',N'" + name + "','" + gmail + "','" + phone + "');";
+            System.out.println(querry);
             Connection1.statement.executeUpdate(querry);
         } catch (Exception e) {
         }
-        
+    }
+
+    public static void ChangeName(String name,int id)
+    {
+        try {
+            String querry = "update Nguoidung set Ten = N'" + name + "' where idU = " + id;
+            System.out.println(querry);
+            Connection1.statement.executeUpdate(querry);
+        } catch (Exception e) {
+        }
+    }
+    
+    public static void ChangePass(String pass, int id)
+    {
+        try {
+            String querry = "update Nguoidung set MatKhau = '" + pass + "' where idU = " + id;
+            System.out.println(querry);
+            Connection1.statement.executeUpdate(querry);
+        } catch (Exception e) {
+        }
     }
 }

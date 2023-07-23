@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class DictDAL {
     Connection1 conn = new Connection1();
+    private ModuleDAL module = new ModuleDAL();
     public  List<DictDTO> getListDict(){
        List<DictDTO> list = new ArrayList<>();
        try{
@@ -111,5 +112,52 @@ public class DictDAL {
         return word1;
 
     }
+   public  List<DictDTO> getWordHocPhan(int idH){
+        List<DictDTO> list = new ArrayList<>();
+        try {
+
+            String querry = "select  dictionary.id, TiengAnh, TiengViet, PhienAm, LoaiTu from dictionary" +
+                            " join KetNoi on KetNoi.id= dictionary.id" +
+                            " join HocPhan on HocPhan.idH = KetNoi.idH and HocPhan.idH = " + idH + 
+                            " join Nguoidung on HocPhan.idU = Nguoidung.idU " +
+                            "where Nguoidung.idU = " + module.getModuleByIdH(idH).getUserId();
+            Connection1.result = Connection1.statement.executeQuery(querry);
+            while (Connection1.result.next()) {
+                DictDTO word = new DictDTO();
+                word.setWordId(Connection1.result.getString(1)); 
+                word.setEnglishLanguage(Connection1.result.getString(2)); 
+                word.setVietnameseLanguae(Connection1.result.getString(3));
+                word.setInternationalPhonetic(Connection1.result.getString(4));
+                word.setWordForm(Connection1.result.getString(5));
+                list.add(word);
+            }
+            //Connection1.result.last();
+            
+
+        } catch (Exception ex) {
+            
+        }
+        return list;
+        
+    } 
+   public static void DeleteWordModule(String id){
+       try {
+           String querry = "delete from Ketnoi where id = '" + id + "'";
+           Connection1.statement.executeUpdate(querry);
+       } catch (Exception e) {
+           System.out.println("Loi roi");
+       }
+       
+   }
+   public static void InsertWordModule(int idH, String id){
+       try {
+           String querry = "insert into ketnoi "
+                    + "values "
+                    + "(" + idH + ",'" + id + "')" ;
+            Connection1.statement.executeUpdate(querry);
+       } catch (Exception e) {
+           System.out.println("Loi roi");
+       }
+   }
     
 }

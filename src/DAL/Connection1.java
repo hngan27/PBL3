@@ -20,7 +20,7 @@ public class Connection1 {
         public static ResultSetMetaData rmsd = null;
 	public Connection1()  {
 		try {
-			String connectionURL = "jdbc:sqlserver://DESKTOP-1SGEUSL\\KAY:1433;encrypt=true;databaseName=PBL3;integratedSecurity=true;trustServerCertificate=true;";
+			String connectionURL = "jdbc:sqlserver://LAPTOP-VOOVNTCH\\SQLEXPRESS:1433;encrypt=true;databaseName=pbl3;integratedSecurity=true;trustServerCertificate=true;";
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			conn = DriverManager.getConnection(connectionURL);
 			statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

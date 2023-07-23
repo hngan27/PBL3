@@ -41,7 +41,9 @@ public class UserBLL {
         return user.getUserLogin(name, password);
 
     }
-
+    public static int getIdUserbyUsername(String username){
+        return DAL.UserDAL.getUserIdByUsername(username);
+    }
     public static boolean checkGmail(String gmail) {
         StringBuffer temp = new StringBuffer(gmail);
         if (temp.length() < 11 || user.getListGmail().contains(gmail)) {
@@ -73,5 +75,15 @@ public class UserBLL {
             return false;
         return true;
     }
-
+    
+    public static void ChangeName(String name,int id)
+    {
+        UserDAL.ChangeName(name, id);
+    }
+    
+    public static void ChangePass(String name,int id)
+    {
+        UserDAL.ChangePass(name, id);
+    }
+    
 }

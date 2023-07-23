@@ -11,7 +11,7 @@ import java.util.List;
 
 public class DatasearchBLL {
     DAL.DictDAL dict = new DAL.DictDAL();
-    private String file = "E:\\NetBeansFile\\PBL3Riu\\src\\DAL\\dataSearch.txt";
+    private String file = "F:\\Downloads\\pbl3_1111\\pbl3_final\\PBL3Riu\\PBL3Riu\\src\\DAL\\dataSearch.txt";
     public List<DataSearchDTO> Search(String search) {
         List<DataSearchDTO> list = new ArrayList<>();
         Trie test = new AutocompleteTrieList.Trie();

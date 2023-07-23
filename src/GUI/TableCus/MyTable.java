@@ -34,8 +34,13 @@ public class MyTable extends JTable {
 //        setColumnAlignment(0,JLabel.CENTER);
 //        setCellAlignment(0, JLabel.CENTER);
     }
-    public void design(){
-          
+    public void design(MyTable table){
+          for(int i = 0; i != getColumnCount(); ++i)
+        {
+            table.setCellAlignment(i, JLabel.CENTER);
+            table.setColumnAlignment(i, JLabel.CENTER);
+           
+        }
     }
     public void setColumnAlignment(int column, int align) {
         header.setAlignment(column, align);
@@ -109,6 +114,10 @@ public class MyTable extends JTable {
                 } else {
                     com.setBackground(new Color(153, 153, 153));
                 }
+            }
+            if(isCellSelected(row, column))
+            {
+                com.setBackground(new Color(125, 125, 125));
             }
             com.setForeground(new Color(0,0,0));
             setBorder(new EmptyBorder(0, 5, 0, 5));

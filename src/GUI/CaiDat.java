@@ -8,6 +8,9 @@ import java.awt.Color;
 
 public class CaiDat extends javax.swing.JFrame {
 
+    static DoiTen dt = new DoiTen();
+    static DoiMK mk = new DoiMK();
+    
     public CaiDat() {
         initComponents();
     }
@@ -30,7 +33,7 @@ public class CaiDat extends javax.swing.JFrame {
         btnX = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(500, 200, 200, 150));
+        setBounds(new java.awt.Rectangle(600, 300, 200, 150));
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
@@ -41,16 +44,31 @@ public class CaiDat extends javax.swing.JFrame {
         btnDoiTen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDoiTen.setText("Đổi tên");
         btnDoiTen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        btnDoiTen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoiTenActionPerformed(evt);
+            }
+        });
 
         btnDoiMK.setBackground(new java.awt.Color(204, 204, 204));
         btnDoiMK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDoiMK.setText("Đổi mật khẩu");
         btnDoiMK.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        btnDoiMK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoiMKActionPerformed(evt);
+            }
+        });
 
         btnDangXuat.setBackground(new java.awt.Color(204, 204, 204));
         btnDangXuat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDangXuat.setText("Đăng xuất");
         btnDangXuat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDangXuatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -63,7 +81,7 @@ public class CaiDat extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(btnDoiTen, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(btnDoiTen, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDoiMK, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -76,6 +94,17 @@ public class CaiDat extends javax.swing.JFrame {
 
         btnX.setBackground(new java.awt.Color(204, 204, 204));
         btnX.setText("X");
+        btnX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnXMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnXMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnXMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,7 +125,7 @@ public class CaiDat extends javax.swing.JFrame {
                     .addComponent(btnX))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118))
+                .addGap(122, 122, 122))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -112,6 +141,34 @@ public class CaiDat extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXMouseClicked
+        ManHinhChinh.cd.setVisible(false);
+    }//GEN-LAST:event_btnXMouseClicked
+
+    private void btnXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXMouseEntered
+        btnX.setBackground(new java.awt.Color(255, 0, 0));
+    }//GEN-LAST:event_btnXMouseEntered
+
+    private void btnXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXMouseExited
+        btnX.setBackground(new java.awt.Color(204, 204, 204));
+    }//GEN-LAST:event_btnXMouseExited
+
+    private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
+        ManHinhChinh.cd.dispose();
+        ManHinhChinh.mhc.dispose();
+        ManHinhDN.dn.setVisible(true);
+    }//GEN-LAST:event_btnDangXuatActionPerformed
+
+    private void btnDoiTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiTenActionPerformed
+        ManHinhChinh.cd.dispose();
+        dt.setVisible(true);
+    }//GEN-LAST:event_btnDoiTenActionPerformed
+
+    private void btnDoiMKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMKActionPerformed
+        ManHinhChinh.cd.dispose();
+        mk.setVisible(true);
+    }//GEN-LAST:event_btnDoiMKActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
